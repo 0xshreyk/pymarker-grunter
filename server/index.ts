@@ -17,7 +17,7 @@ app.get('/api/health', async (req : Request, res : Response)=> {
 app.post('/api/run', async (req : Request, res : Response)=> {
     const body = req.body;
     const code : string = body.code;
-    const output = await (await fetch('http://localhost:8000', {
+    const output = await (await fetch('http://localhost:8000/api/run', {
         method : 'POST',
         headers : {
             'Content-Type' : 'application/json'
